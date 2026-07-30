@@ -65,7 +65,7 @@ erDiagram
     CHECKOUT_GROUP ||--|| PAYMENT_ATTEMPT : "funds via one auth"
     ORDER ||--o{ INVENTORY_RESERVATION : "holds stock via"
     ORDER ||--o{ STATUS_HISTORY : "audit trail"
-    IDEMPOTENCY_RECORD ..> ORDER : "guards creation of"
+    IDEMPOTENCY_RECORD ||..|| ORDER : "guards creation of"
 ```
 
 One thing is important here. `IdempotencyRecord` does NOT point to `Order` with a foreign key. A foreign key is a column that links one table's row to another table's row.
