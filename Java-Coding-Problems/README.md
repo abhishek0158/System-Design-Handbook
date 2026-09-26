@@ -33,9 +33,14 @@ Each solution has the same format:
 | **1 (now)** | Parking Lot · Notification System · Task Scheduler · Logging Framework · Splitwise (Expense Splitter) · In-Memory Key-Value Store |
 | 2 | URL Shortener (LLD) · Elevator System · Movie Ticket Booking · Inventory Management · Pub/Sub System · Vending Machine · Tic-Tac-Toe / Snake & Ladder |
 | 3 | File System (in-memory) · ATM · Coffee Machine · Meeting Room Booking · Library Management · Cab Booking · Digital Wallet |
+| Extra | Order Management System (saga: reserve → pay → confirm; state machine; idempotency) |
 
 ## Status
-**COMPLETE — all 41 solutions written** (21 in `concurrency/`, 20 in `lld/`), across all three
+**COMPLETE — 42 solutions written** (21 in `concurrency/`, 21 in `lld/`), across all three
 tiers. Each solution follows the full format: Problem → Requirements/Clarifying Questions →
 Design (with class sketch + patterns) → Java Solution → How It Works → How to Extend →
 Complexity & Thread-Safety → Interview Tips & Common Mistakes.
+
+> **Latest addition:** `lld/21-Order-Management-System.md` — order lifecycle as a state machine,
+> the place-order **saga** (reserve stock → charge payment → confirm, with compensations on
+> failure), and **idempotent** placement. Ties into `lld/10-Inventory-Management.md` (reservations).
